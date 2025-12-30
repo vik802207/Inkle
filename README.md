@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Inkle Frontend Assignment – React Table & Edit Modal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is built as part of the **Inkle Frontend Intern Assignment**.  
+It demonstrates building a real-world table UI using **@tanstack/react-table**, API integration, and a clean edit flow with a modal.
 
-## Available Scripts
+---
+## 🌐 Live Demo
 
-In the project directory, you can run:
+🔗 **Live Project URL:**  
+https://keen-nougat-6bac4c.netlify.app/
 
-### `npm start`
+## 🚀 Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 📊 Data table built **only using @tanstack/react-table**
+- ✏️ Edit customer details via modal
+- 🌍 Country dropdown populated from API
+- 🔄 Update data using PUT API (existing + updated fields)
+- 🎨 Clean, modern, dashboard-style UI
+- 🧩 Modular and readable code structure
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🧱 Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React (TypeScript)
+- @tanstack/react-table
+- Axios
+- CSS (custom, no heavy UI library)
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🔗 APIs Used
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Taxes API**  
+  https://685013d7e7c42cfd17974a33.mockapi.io/taxes
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Countries API**  
+  https://685013d7e7c42cfd17974a33.mockapi.io/countries
 
-### `npm run eject`
+---
+## 📁 Project Structure
+```bash
+src/
+├── api/
+│ ├── taxesApi.ts
+│ └── countriesApi.ts
+├── components/
+│ ├── Table.tsx
+│ └── EditModal.tsx
+├── pages/
+│ └── Home.tsx
+├── styles/
+│ ├── global.css
+│ ├── table.css
+│ └── modal.css
+├── App.tsx
+└── main.tsx
+```
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🧑‍💻 User Flow
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. User lands on the table view
+2. Table displays data fetched from Taxes API
+3. Clicking the edit icon opens a modal
+4. User can update:
+   - Name
+   - Country (dropdown from Countries API)
+5. On save:
+   - PUT request is sent with existing + updated data
+6. Table refreshes with updated values
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## ▶️ Running the Project Locally
 
-## Learn More
+### 1️⃣ Install dependencies
+```bash
+npm install
+npm run dev
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📁 Project Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
